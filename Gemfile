@@ -20,7 +20,13 @@ gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
+
+#Use Dotenv for to load environment variables from `.env` into `ENV` in development
+gem 'dotenv-rails', groups: [:development, :test]
+
+#RSpotify a Ruby wrapper for the Spotify API https://github.com/guilhermesad/rspotify 
+gem 'rspotify'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
