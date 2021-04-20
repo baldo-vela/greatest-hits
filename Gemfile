@@ -22,8 +22,8 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-#Use Dotenv for to load environment variables from `.env` into `ENV` in development
-gem 'dotenv-rails', groups: [:development, :test]
+#Using Figaro for quick and easy key shimming
+gem 'figaro'
 
 #RSpotify a Ruby wrapper for the Spotify API https://github.com/guilhermesad/rspotify 
 gem 'rspotify'
