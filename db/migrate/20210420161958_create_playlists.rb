@@ -3,6 +3,8 @@ class CreatePlaylists < ActiveRecord::Migration[6.0]
     create_table :playlists do |t|
       t.string :name
       t.string :description
+      t.string :SpotifyPlaylistID
+      t.string :SpotifyUserID
       t.array :tracks
       t.integer :followers
 
