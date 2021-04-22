@@ -8,6 +8,9 @@ class CreatePlaylists < ActiveRecord::Migration[6.0]
       t.array :tracks
       t.integer :followers
 
+      t.integer :score # Local votes
+      t.integer :views # Local views
+
       t.timestamps
     end
   end
