@@ -4,4 +4,6 @@ class User < ApplicationRecord
 
     has_secure_password
 
+    # user has many playlists
+    # a playlist has many tracks
 end
