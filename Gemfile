@@ -28,6 +28,9 @@ gem 'figaro'
 #RSpotify a Ruby wrapper for the Spotify API https://github.com/guilhermesad/rspotify 
 gem 'rspotify'
 
+#Spotify OmniAuth
+gem 'omniauth-spotify'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

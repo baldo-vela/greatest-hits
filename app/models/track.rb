@@ -1,5 +1,6 @@
 class Track < ApplicationRecord
-
+    belongs_to :playlist
+    
     def CreateFromSpotify()
         #Check if it exists in DB
         #Else make the API call

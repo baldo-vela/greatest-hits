@@ -5,7 +5,6 @@ class CreatePlaylists < ActiveRecord::Migration[6.0]
       t.string :description
       t.string :SpotifyPlaylistID
       t.string :SpotifyUserID
-      t.array :tracks
       t.integer :followers
 
       t.integer :score # Local votes
