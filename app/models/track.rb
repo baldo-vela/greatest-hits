@@ -16,7 +16,7 @@ class Track < ApplicationRecord
         #Check if it exists in DB
         #Else make the API call
             #RSpotify Get a track
-            temp = RSpotify::Playlist.find("#{track_sid}", "")
+            temp = RSpotify::Track.find("#{track_sid}")
             #pause if error in fetching
                 #binding pry    
                 #assign artist name
