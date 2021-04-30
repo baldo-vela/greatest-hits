@@ -1,5 +1,13 @@
 class Track < ApplicationRecord
+    # Associations
     belongs_to :playlist
+
+    # Validations
+        # track name
+        # spotify e-id 
+
+    # Scopes
+    scope :search, -> (query) {self.where("title LIKE ?", "%#{query}%")}
 
     def CreateFromSpotify(track_seid)
         #Check if it exists in DB
