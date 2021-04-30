@@ -7,5 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Creating default Admin Account"
-User.create(username: "Admin", password: "test", email: "admin@emailfake.com") 
-if User.all[0].username
+User.create(username: "Admin", password: "test", email: "admin@emailfake.com")
+if User.all[0].username = "Admin"
+    
+User.create(username: "Professor Cane", password: "instrument", email: "DrRCane@greatesthits.com") 
+# https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M
+# Today's Top 100
