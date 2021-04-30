@@ -7,7 +7,7 @@ class Track < ApplicationRecord
         # spotify e-id 
 
     # Scopes
-    scope :search, -> (query) {self.where("title LIKE ?", "%#{query}%")}
+    scope :search, -> (query) { self.where("title LIKE ?", "%#{query}%") }
 
     def self.create_from_spotify(track_sid)
         #Feed this a Spotify track external ID as a string
@@ -16,7 +16,7 @@ class Track < ApplicationRecord
         #Check if it exists in DB
         #Else make the API call
             #RSpotify Get a track
-            temp = RSpotify::Playlist.find(:"#{track_sid}")
+            temp = RSpotify::Playlist.find("#{track_sid}", "")
             #pause if error in fetching
                 #binding pry    
                 #assign artist name
