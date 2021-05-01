@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2021_04_21_205241) do
 
   create_table "tracks", force: :cascade do |t|
     t.string "name"
+    t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
