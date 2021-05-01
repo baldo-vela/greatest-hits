@@ -21,6 +21,7 @@ class Track < ApplicationRecord
                 #binding pry    
                 #assign artist name
                 #assign track name
+                #assign direct spotify url
                 #assign preview url (WIP)
                 #assign the spotify e-id
                 
