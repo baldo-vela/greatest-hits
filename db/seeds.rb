@@ -5,11 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-puts "Creating default Admin Account"
-User.create(username: "Admin", password: "test", email: "admin@emailfake.com")
-if User.all[0].username = "Admin"
+if User.all.empty?
+    puts "Creating default Admin Account"
+    User.create(username: "Admin", password: "test", email: "admin@emailfake.com")
+    puts User.all[0]
+    puts "Creating account for Professor Cane"
+    User.create(username: "Professor Cane", password: "instrument", email: "DrRCane@greatesthits.com") 
+    puts User.all[1]
+else
+    puts "Abort error: User Database Exists already"
+end
     
-User.create(username: "Professor Cane", password: "instrument", email: "DrRCane@greatesthits.com") 
+
 # https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M
 # Today's Top 100

@@ -7,7 +7,7 @@ class Track < ApplicationRecord
         # spotify e-id 
 
     # Scopes
-    scope :search, -> (query) { self.where("title LIKE ?", "%#{query}%") }
+    scope :search, -> (query) { self.where("name LIKE ?", "%#{query}%") }
 
     def self.new_from_spotify(spotify_track)
         #pass in a RSpotify track object to instance this class
