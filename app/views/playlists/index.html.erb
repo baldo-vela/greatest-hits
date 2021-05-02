@@ -1,2 +1,11 @@
 <%# <%= index_header %> 
-<h1>Index Goes here</h1>
+<h1>The Playlists</h1>
+<div class="album text-muted">
+   <div class="container">
+      <div class="row">
+         <% @playlists.each do |playlist| %>
+            <%= render partial: 'card' %>
+         <% end %>
+      </div>
+    </div>
+</div>
