@@ -14,11 +14,13 @@ ActiveRecord::Schema.define(version: 2021_04_21_205241) do
 
   create_table "playlists", force: :cascade do |t|
     t.string "name"
+    t.integer "user_id"
     t.string "description"
-    t.string "SpotifyPlaylistID"
-    t.string "SpotifyUserID"
+    t.string "spotifyPlaylistID"
+    t.string "spotifyUserID"
     t.integer "followers"
-    t.integer "score"
+    t.integer "likes", default: 0
+    t.integer "dislikes", default: 0
     t.integer "views"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -26,7 +28,11 @@ ActiveRecord::Schema.define(version: 2021_04_21_205241) do
 
   create_table "tracks", force: :cascade do |t|
     t.string "name"
+    t.string "spotify_id"
+    t.string "artists"
+    t.string "img"
     t.string "url"
+    t.string "preview"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -1,0 +1,13 @@
+<%= render partial: 'errors/errors', locals: {model: @playlist} %>
+
+<h1><%= @playlist.title %></h1>
+<div>
+    <p> <%= format_created_at(@playlist) %></p>
+    <p> <%= @playlist.description %></p>
+    <p> Views: <%= @playlist.views %></p>
+    <p> Likes: <%= @playlist.likes %></p>
+    <p> Dislikes: <%= @playlist.dislikes %></p>
+</div>
+
+<%= link_to 'back', playlists_path %>
+<%= link_to 'Edit', edit_playlist_path(@playlist) %>
