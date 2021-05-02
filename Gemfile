@@ -22,14 +22,15 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+#Added during Greatest Hits
 #Using Figaro for quick and easy key shimming
 gem 'figaro'
-
 #RSpotify a Ruby wrapper for the Spotify API https://github.com/guilhermesad/rspotify 
 gem 'rspotify'
-
 #Spotify OmniAuth
 gem 'omniauth-spotify'
+#Adding AMS to 
+gem 'active_model_serializers'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
