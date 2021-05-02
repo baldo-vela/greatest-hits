@@ -17,7 +17,7 @@ class Playlist < ApplicationRecord
             description: spotify_playlist.description,
             spotifyPlaylistID: spotify_playlist.id,
             spotifyUserID: spotify_playlist.owner.id,
-            followers: spotify_playlist.followers)        )
+            followers: spotify_playlist.followers.count)        )
     end
 
     def self.create_from_spotify(spotify_playlist)
