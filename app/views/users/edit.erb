@@ -1,2 +1,15 @@
 <%# Edit Current User Account Information %>
 <%# Can maybe use a partial layout here and on the edit page %>
+<h1>Modify Your User Profile</h1>
+<%= render partial: 'errors/errors', locals: {model: @user} if @user %>
+<%= form_with(model: @user, url: signup_path)  do |f|%>
+    <%= f.label :username %>
+    <%= f.text_field :name %><br>
+    <%= f.label :email %>
+    <%= f.text_field :email %><br>
+    <%= f.label :username %>
+    <%= f.text_field :username %><br>
+    <%= f.label :password %>
+    <%= f.password_field :password %><br>
+    <%= f.submit "Submit" %>
+<% end %>
