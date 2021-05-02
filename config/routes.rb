@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   #Root
-  #root('static#welcome')
+  root('static#welcome')
 
   #Signup
   get '/signup', to: 'users#new'
