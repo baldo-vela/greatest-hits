@@ -9,11 +9,12 @@ class Playlist < ApplicationRecord
 
     scope :search, -> (query) { self.where("name LIKE ?", "%#{query}%") }
 
-    def self.new_from_spotify(spotify_playlist)
+    def self.new_from_spotify(spotify_playlist, user_id = 1)
         #pass in an RSpotify playlist object
+        #During seeding we assume Professor Reed is the user
         Playlist.new(
             name: spotify_playlist.name,
-            user_id: @user.id,
+            user_id: user_id,
             description: spotify_playlist.description,
             spotifyPlaylistID: spotify_playlist.id,
             spotifyUserID: spotify_playlist.owner.id,

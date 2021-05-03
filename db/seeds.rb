@@ -16,6 +16,26 @@ else
     puts "Abort error: User Database Exists already"
 end
     
+#----Playlist Seeding----
 
 # https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M
 # Today's Top 100
+
+# https://open.spotify.com/playlist/37i9dQZF1DWWMOmoXKqHTD
+# Songs to Sing in the Car
+
+
+# temp = RSpotify::Playlist.find_by_id('37i9dQZF1DXcBWIGoYBM5M')
+# test = Playlist.new_from_spotify(temp)
+Starter_Playlists = 
+    [   '37i9dQZF1DXcBWIGoYBM5M',
+        '37i9dQZF1DWWMOmoXKqHTD',
+        '3hoI0s5TLdpPMcimSRmQpj',
+        '4sgUux9hmykyWYmVoe4W6p', 
+        '0tKl4orQrCG2wbWPJjYg8k', 
+    ]
+Starter_Playlists.each do |t|
+    temp = RSpotify::Playlist.find_by_id(t)
+    puts "Retrieved Playlist: #{temp.name}"
+    test = Playlist.new_from_spotify(temp)
+end
