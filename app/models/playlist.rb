@@ -7,7 +7,7 @@ class Playlist < ApplicationRecord
     # Today's Top 100
     # https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M
 
-    scope :search, -> (query) { self.where("name LIKE ?", "%#{query}%")
+    scope :search, -> (query) { self.where("name LIKE ?", "%#{query}%") }
 
     def self.new_from_spotify(spotify_playlist)
         #pass in an RSpotify playlist object
@@ -17,7 +17,8 @@ class Playlist < ApplicationRecord
             description: spotify_playlist.description,
             spotifyPlaylistID: spotify_playlist.id,
             spotifyUserID: spotify_playlist.owner.id,
-            followers: spotify_playlist.followers.count)        )
+            followers: spotify_playlist.followers.count)        
+            
     end
 
     def self.create_from_spotify(spotify_playlist)
