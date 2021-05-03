@@ -3,8 +3,13 @@
 <div class="album text-muted">
    <div class="container">
       <div class="row">
-         <% @playlists.each do |playlist| %>
-            <%= render partial: 'card' %>
+         <% @playlists.each do |p| %>
+            <%#= render partial: 'card', :playlist => p %>
+            <div class="card">
+               <strong class="card-text"><%= p.name %></strong>
+               <p class="card-text"><%= p.views %></p>
+               <p class="card-text"><%= p.likes %></p>
+            </div>
          <% end %>
       </div>
     </div>
