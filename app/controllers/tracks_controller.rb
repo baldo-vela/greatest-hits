@@ -4,6 +4,14 @@ class TracksController < ApplicationController
         #render json: @tracks 
     end
 
+    def show
+        @track = Track.find(params[:id])
+    end
+
+    def new
+        @track = Track.new
+    end
+
     private
     def get_track
         @track = Track.find_by(id: params[:id])
