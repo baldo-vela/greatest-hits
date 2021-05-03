@@ -37,5 +37,5 @@ Starter_Playlists =
 Starter_Playlists.each do |t|
     temp = RSpotify::Playlist.find_by_id(t)
     puts "Retrieved Playlist: #{temp.name}"
-    test = Playlist.new_from_spotify(temp)
+    test = Playlist.create_from_spotify(temp)
 end
