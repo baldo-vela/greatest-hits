@@ -36,4 +36,17 @@ class SessionsController < ApplicationController
       session.clear
       redirect '/login'
     end
+
+private
+=begin 
+Authorization data is available in the request.env['omniauth.auth'].credentials -- a hash that also responds to the #token, #refresh_token, #expires_at, and #expires methods.
+ {
+    "token" => "xxxx",
+    "refresh_token" => "xxxx",
+    "expires_at" => 1403021232,
+    "expires" => true
+ } 
+=end
+    end
+
   end

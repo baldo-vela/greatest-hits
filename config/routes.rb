@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: "sessions#logout"
 
-
+  #Spoifiy Callback
+  get '/auth/spotify/callback', to: 'sessions#create'
 
   resources :tracks
   resources :playlists

@@ -29,7 +29,8 @@ gem 'figaro'
 gem 'rspotify'
 #Spotify OmniAuth
 gem 'omniauth-spotify'
-#Adding AMS to 
+# Using CORS to handle 
+#Adding AMS for eventual passing of JSON objects to front end
 gem 'active_model_serializers'
 
 # Use Active Storage variant
