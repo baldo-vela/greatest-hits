@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2021_04_21_205241) do
 
   create_table "playlists", force: :cascade do |t|
     t.string "name"
-    t.integer "user_id"
+    t.string "user_id"
     t.string "description"
     t.string "spotifyPlaylistID"
     t.string "spotifyUserID"
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 2021_04_21_205241) do
     t.string "username"
     t.string "email"
     t.string "password_digest"
+    t.string "uid"
+    t.string "provider"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -42,5 +42,18 @@ class SessionsController < ApplicationController
     def auth
       request.env['omniauth.auth']
     end
+=begin
+The username/nickname is also available via a call to request.env['omniauth.auth'].uid
+Information about the authorized Spotify user is available in the request.env['omniauth.auth'].info hash. e.g.       
+    :name => "Claudio Poli",
+    :nickname => "SomeName",
+    :email => "claudio@icorete.ch",
+    :urls => {"spotify" => "https://open.spotify.com/user/1111111111"},
+    :image => "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/t1.0-1/s320x320/301234_1962753760624_625151598_n.jpg",
+    :birthdate => Mon, 01 Mar 1993, # Date class
+    :country_code => "IT",
+    :product => "open",
+    :follower_count => 10 \
+=end
 
 end
