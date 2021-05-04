@@ -29,7 +29,8 @@ gem 'figaro'
 gem 'rspotify'
 #Spotify OmniAuth
 gem 'omniauth-spotify'
-# Using CORS to handle 
+# Added to handle CRSF protection while using omniauth
+gem 'omniauth-rails_csrf_protection'
 #Adding AMS for eventual passing of JSON objects to front end
 gem 'active_model_serializers'
 

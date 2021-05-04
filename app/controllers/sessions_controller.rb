@@ -1,52 +1,32 @@
 class SessionsController < ApplicationController
-    get '/signup' do
-      redirect_if_logged_in
-      erb :'sessions/signup'
-    end
-  
-    post '/signup' do
-      user = User.new(params[:user])
-      if user.save
-        session[:user_id] = user.id
-        
-      else
-        redirect "/signup"
-      end
-    end
-  
-    get '/login' do
-      redirect_if_logged_in
-      erb :'sessions/login'
-    end
-  
-    post '/login' do
-      # we should see if user exist
-       user = User.find_by_username(params[:user][:username])
-  
-      # if the user exist we should make sure they are using the correct password (authenticate them)
-       if user && user.authenticate(params[:user][:password])
-        session[:user_id] = user.id
-        
-       else
-        redirect "/login"
-       end
-    end
-  
-    get '/logout' do
-      session.clear
-      redirect '/login'
-    end
-
-private
-=begin 
-Authorization data is available in the request.env['omniauth.auth'].credentials -- a hash that also responds to the #token, #refresh_token, #expires_at, and #expires methods.
- {
-    "token" => "xxxx",
-    "refresh_token" => "xxxx",
-    "expires_at" => 1403021232,
-    "expires" => true
- } 
-=end
-    end
+  def create
+    @user = User.find_by_username(params[:user][:username])
+    if @user && @usser.authenticate(params[:user][:password])
 
   end
+
+  def omniauth
+    @user = User.find_or_create_by(username: auth[:info][:email]) do |u|
+      u.email = auth[:info][:email]
+      u.username = auth[:info][:email]
+      u.name = auth[:info][:name]
+      u.uid = auth[:uid]
+      u.provider = auth[:provider]
+      u.password = SecureRandom.hex(12)
+    end
+    
+    if @user.valid?
+        flash[:messsage] = "Signed in with Spotify"
+        session[:user_id] = @user.id
+        redirect_to playlists_path
+    else
+        flash[:message] = "Credential error"
+        redirect_to login_path
+    end
+  private
+
+    def auth
+      request.env['omniauth.auth']
+    end
+
+end
