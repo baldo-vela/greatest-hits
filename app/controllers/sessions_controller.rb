@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def create
     @user = User.find_by_username(params[:user][:username])
-    if @user && @usser.authenticate(params[:user][:password])
+    if @user && @user.authenticate(params[:user][:password])
 
   end
 
@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
   end
 
   def omniauth
+    flash[:ommiauth_spotify_force_approval?]
     @user = User.find_or_create_by(username: auth[:info][:email]) do |u|
       u.email = auth[:info][:email]
       u.username = auth[:info][:email]
