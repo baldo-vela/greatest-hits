@@ -5,6 +5,11 @@ class SessionsController < ApplicationController
 
   end
 
+  def logout
+    session.clear
+    redirect_to login_path
+  end
+
   def omniauth
     @user = User.find_or_create_by(username: auth[:info][:email]) do |u|
       u.email = auth[:info][:email]
@@ -23,6 +28,8 @@ class SessionsController < ApplicationController
         flash[:message] = "Credential error"
         redirect_to login_path
     end
+  end
+
   private
 
     def auth
