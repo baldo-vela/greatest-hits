@@ -10,11 +10,22 @@ class UsersController < ApplicationController
         if @user.save
             flash[:message] = "Successfully signed up."
             session[:user_id] = @user.id
-            # WIP
-            # redirect_to
+            
+            redirect_to playlists_path
         else
             render :new
         end
+    end
+
+    def edit
+        @user = User.find_by_id(params[:id])
+    end
+
+    def show
+        @user = User.find_by_id(params[:id])
+    end
+
+    def index
     end
 
     private

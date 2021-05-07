@@ -28,4 +28,6 @@ class Playlist < ApplicationRecord
         return playlist
     end
 
+    #need a method that uses the RSpotify playlist.tracks array to instance new local track objects 
+
 end
