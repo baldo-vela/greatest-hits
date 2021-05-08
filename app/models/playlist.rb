@@ -1,8 +1,12 @@
 class Playlist < ApplicationRecord
     belongs_to  :user
     has_many :tracks
+
+    has_many :comments
+    has_many :users, through: :comments
     
     validates :name, presence: true
+    validates :spotifyPlaylistID, presence: true
     # RSpotify::Playlist.find_by_id('id', market: nil) -> Playlist
     # Today's Top 100
     # https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M

@@ -5,6 +5,9 @@ class PlaylistsController < ApplicationController
     
     def show
         @playlist = Playlist.find(params[:id])
+        @comments = @playlist.comments
+        @comment = @playlist.comments.build(user_id: current_user.id)
+        #@playlist.update(views: @playlist.views+1)
     end
 
     def new
@@ -24,7 +27,11 @@ class PlaylistsController < ApplicationController
     #-----Helpers & Private Methods------
     private
     def playlist_params
-        # params.require(:playlist).permit
+        params.require(:playlist).permit(:name, :user_id, :description, :spotifyPlaylistID, :spotifyUserID)
+    end
+
+    def find_playlist
+        @playlist = Playlist.find_by_id(params[:playlist_id])
     end
     
 end

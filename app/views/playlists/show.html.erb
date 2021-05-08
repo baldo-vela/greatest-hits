@@ -3,10 +3,25 @@
 <h1><%= @playlist.name %></h1>
 <div>
     <p> <%= @playlist.description %></p>
+    <p> <%= User.find_by_id(@playlist.user_id).username%>
     <p> Views: <%= @playlist.views %></p>
     <p> Likes: <%= @playlist.likes %></p>
     <p> Dislikes: <%= @playlist.dislikes %></p>
 </div>
 
-<%= link_to 'back', playlists_path %>
-<%= link_to 'Edit', edit_playlist_path(@playlist) %>
+<%= form_with(model: [@playlist, @comment]) do |f|%>
+    <%= f.hidden_field :user_id, value: current_user.id  %>
+    <%= f.hidden_field  :playlist_id,    value: @playlist.id     %>
+    <%= f.text_area     :body       %>
+    <%= f.submit        :comment    %>
+    <% end %>
+
+<%# List comments below, sure why not use cards again? %>
+
+    <%= @comments.each do |c|%>
+        <div class ="card">
+            <%= c.user.username %> 
+            <%= c.body %>
+            <%= c.updated_at%>
+        <div>
+    <% end %>
