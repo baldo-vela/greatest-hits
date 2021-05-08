@@ -1,6 +1,6 @@
 class Comment < ApplicationRecord
    belongs_to :user
-   belongs_to :image
+   belongs_to :playlist
     
    validates :body, presence: true    
 end

@@ -10,18 +10,20 @@
 </div>
 
 <%= form_with(model: [@playlist, @comment]) do |f|%>
-    <%= f.hidden_field :user_id, value: current_user.id  %>
-    <%= f.hidden_field  :playlist_id,    value: @playlist.id     %>
-    <%= f.text_area     :body       %>
-    <%= f.submit        :comment    %>
+    <% f.hidden_field   :user_id,       value: current_user.id  %>
+    <% f.hidden_field   :playlist_id,   value: @playlist.id     %>
+    <%= f.text_area     :body                                   %>
+    <%= f.submit        :comment                                %>
     <% end %>
 
 <%# List comments below, sure why not use cards again? %>
 
-    <%= @comments.each do |c|%>
+<%= @comments.each do |c|%>
+    <li>
         <div class ="card">
             <%= c.user.username %> 
             <%= c.body %>
             <%= c.updated_at%>
         <div>
-    <% end %>
+    </li>
+<% end %>
