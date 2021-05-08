@@ -19,10 +19,11 @@ class SessionsController < ApplicationController
   def omniauth
     flash[:ommiauth_spotify_force_approval?]
     @user = User.find_or_create_by(username: auth[:info][:email]) do |u|
+      #byebug
       u.email = auth[:info][:email]
-      u.username = auth[:info][:uid]
+      u.username = auth[:info][:nickname]
       #u.name = auth[:info][:name]
-      u.uid = auth[:uid]
+      #u.uid = auth[:uid]
       u.provider = auth[:provider]
       u.password = SecureRandom.hex(12)
     end
