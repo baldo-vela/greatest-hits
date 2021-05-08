@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
     flash[:ommiauth_spotify_force_approval?]
     @user = User.find_or_create_by(username: auth[:info][:email]) do |u|
       u.email = auth[:info][:email]
-      u.username = auth[:info][:email]
+      u.username = auth[:info][:uid]
       #u.name = auth[:info][:name]
       u.uid = auth[:uid]
       u.provider = auth[:provider]
