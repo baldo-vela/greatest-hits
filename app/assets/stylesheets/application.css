@@ -28,16 +28,17 @@
  }
 /* SCROLL BAR Tweaks */
  body::-webkit-scrollbar {
-  width: 0.25rem;
+  width: 0.5rem;
 
  }
 
  body::-webkit-scrollbar-track {
-  background: #31081F;
+  background: #808F85;
 
  }
 
  body::-webkit-scrollbar-thumb {
+   background: #595959;
 
 
  }
