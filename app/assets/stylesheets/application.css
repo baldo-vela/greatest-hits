@@ -13,15 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+ /* Color palette composed at https://coolors.co/27163f-31081f-6b0f1a-595959-808f85 */
 :root {
   font-size: 16px;
   font-family: 'Share Tech Mono', monospace;
   font-family: 'Open Sans', sans-serif;
-  /* --bg-primary:  #27163f;
-  --bg-secondary: #31081F; */
+  --davys-grey: #595959;
+  --xanadu: #808F85;
+  --russian-violet:  #27163f;
+  --dark-purple: #31081F;
+  --persian-plum: #6b0f1a; 
 }
- body
- {
+ body {
     margin: 0;
     padding: 0;
      
@@ -33,18 +37,18 @@
  }
 
  body::-webkit-scrollbar-track {
-  background: #808F85;
+  background: var(--xanadu);
 
  }
 
  body::-webkit-scrollbar-thumb {
-   background: #595959;
+   background: var(--davys-grey);
 
 
  }
 
  main {
-   margin-left: 5rem;
+   margin-left: 15rem;
    padding: 1rem;
  }
  .center {
@@ -54,10 +58,58 @@
     width: 50%;
   }
 
+  .navbar {
+    width: 9rem;
+    height: 100vh;
+    position: fixed;
+    background-color: var(--davys-grey);
+    transition: width 200ms ease;
+  }
+
+  .navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+  .navbar:hover{
+    width: 10rem; 
+  }
+  .navbar:hover .link-text {
+    display: block;
+  }
+  .nav-item {
+    width: 100%;
+  }
+  .nav-item:last-child {
+    /*This pseudo-selector shunts the last item to the bottom */
+    margin-top: auto;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+
+  }
+  
+  .link-text {
+    display: none;
+    margin-left: 1rem;
+  }
+  .nav-link svg {
+    min-width: 2rem;
+    margin: 0 1.5rem;
+  }
+
 /* footer */
 
 footer {
     margin-top: 45px;
+    margin-left: 10rem;
     padding-top: 5px;
     border-top: 0px; 
     color: #999;
