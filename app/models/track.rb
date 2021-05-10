@@ -25,4 +25,12 @@ class Track < ApplicationRecord
         return track
     end
 
+    def self.new_from_playlist(playlist)
+        #Take passed playlist hash create local track objects
+
+
+    end
+
+    def self.create_from_playlist(playlist)
+
 end
