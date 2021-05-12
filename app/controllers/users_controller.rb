@@ -22,6 +22,10 @@ class UsersController < ApplicationController
     end
 
     def show
+        #A user profile should show the user profile information and their owned associated objects
+        @user = User.find_by_id(params[:id])
+        @playlists = @user.playlists
+        @comments = @user.comments
     end
 
 

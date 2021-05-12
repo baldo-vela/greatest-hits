@@ -11,6 +11,7 @@ class User < ApplicationRecord
     # a playlist has many tracks
 
     def playlists_from_spotify
-        
+        #Spotify Users have a unique ID
+        #Rspotify Query t
     end
 end

@@ -18,16 +18,18 @@ class SessionsController < ApplicationController
 
   def omniauth
     flash[:ommiauth_spotify_force_approval?]
-    @user = User.find_or_create_by(username: auth[:info][:email]) do |u|
-      #byebug
+    @user = User.find_or_create_by(username: auth[:info][:nickname]) do |u|
+      
       u.email = auth[:info][:email]
       u.username = auth[:info][:nickname]
       #u.name = auth[:info][:name]
-      #u.uid = auth[:uid]
+      #OAuth Hash seems to be missing the Spotify User ID
+      #u.uid = auth[:id]
+      #Alternative build a helper method to RSpotify query for a more detailed user hash and assign the UID from that
       u.provider = auth[:provider]
       u.password = SecureRandom.hex(12)
     end
-    
+    #byebug
     if @user.valid?
         flash[:messsage] = "Signed in with Spotify"
         session[:user_id] = @user.id

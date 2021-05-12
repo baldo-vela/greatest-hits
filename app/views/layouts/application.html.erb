@@ -8,16 +8,21 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag asset_path('gh_favicon.ico') %>
+    <meta name="turbolinks-root" content="/app">
   </head>
 
   <body>
       <nav class ="navbar">
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a href="#" class="nav-link">
+          <li class="logo">
+            <a href="/" class="nav-link">
+              <%= image_tag('gh_logo.png', width: '40rem', height: '40rem') %>
               <span class="link-text logo-text">Greatest Hits </span>
+              
+             
             </a>
           </li>
+          
           <li class="nav-item">
             <a href="#" class="nav-link">
               <span class="link-text logo-text">User Profile </span>
@@ -29,6 +34,9 @@
             </a>
           </li>
           <li class="nav-item">
+
+          </li>
+          <li class="nav-item">
             <a href="#" class="nav-link">
               <span class="link-text logo-text">Logout</span>
             </a>
@@ -38,5 +46,14 @@
       </nav>
     <%= yield %>
   </body>
-  <%= render "layouts/footer" %>
+ <footer class="footer" data-turbolinks-permanent>
+    <%# Hell yeah lets get that vaporwave aesthetic in here %>
+    <div id="BC-BGM-Player" >
+        <iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=1412946879/size=small/bgcol=333333/linkcol=e32c14/transparent=true/" seamless><a href="https://luxuryelite.bandcamp.com/album/prism">prism by luxury elite</a></iframe>
+        <hr class="solid">
+    </div>
+    <small>
+        <a href="https://github.com/baldo-vela/greatest-hits">Greatest Hits </a> by Baldomero Vela 
+    </small>
+</footer>
 </html>
