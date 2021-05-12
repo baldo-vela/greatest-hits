@@ -8,14 +8,18 @@ Due to localization issues, this project was created with a depreciated version 
 Download a copy of the source code to local machine. Run `bundle install` to prepare all the required Ruby gems. 
 ## Usage
 This application requires the usage of the Spotify API through RSpotify as a wrapper. You will need to register and obtain your own Project Developer keys from Spotify: https://developer.spotify.com/dashboard/
-Create or login to a Spotify account you would like to use as a developer. Follow the `Create an App` link (this may vary in the future according to Spotify's website.) Go into your new Spotify application settings. Note the `Client ID: foo` and the `Show Client Secret`, these are the keys for your application, you will need to copy paste them in the next step.
+Create or login to a Spotify account you would like to use as a developer. Follow the `Create an App` link (this may vary in the future according to Spotify's website.) Go into your new Spotify application settings. Note the `Client ID: 'foo'` and the `Show Client Secret` button--when pressed it will show your secret key. These two numerical values are the keys for your application, you will need to copy paste them in the next step.
 
 Run `$bundle exec figaro install` inside the unpacked and initialized project directory in your terminal.
 This will automatically create a commented `config/application.yml` file and automatically add it to your local `.gitignore` Add your Spotify dev keys to this file in the following format.
-```spotify_id: "[YOUR ID KEY]"
-spotify_secret: "[YOUR SECRET KEY]"```
-Save the `application.yml` file
+```ruby
+spotify_id: "[YOUR ID KEY]"
+spotify_secret: "[YOUR SECRET KEY]" 
+```
 
+Save the `application.yml` file, with the keys. Figaro will automatically shim those as environment variables when the RSpotify and Omniauth gems need them. 
+
+Boot your Rails server, and enjoy.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
