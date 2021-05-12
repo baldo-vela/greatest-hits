@@ -15,7 +15,8 @@
  */
 
  /* Color palette composed at https://coolors.co/27163f-31081f-6b0f1a-595959-808f85 */
-:root {
+/* 
+ :root {
   font-size: 16px;
   font-family: 'Share Tech Mono', monospace;
   font-family: 'Open Sans', sans-serif;
@@ -30,7 +31,7 @@
     padding: 0;
      
  }
-/* SCROLL BAR Tweaks */
+
  body::-webkit-scrollbar {
   width: 0.5rem;
 
@@ -85,7 +86,7 @@
     width: 100%;
   }
   .nav-item:last-child {
-    /*This pseudo-selector shunts the last item to the bottom */
+
     margin-top: auto;
   }
 
@@ -105,8 +106,8 @@
     margin: 0 1.5rem;
   }
 
-/* footer */
 
+*/
 footer {
     margin-top: 45px;
     margin-left: 10rem;
