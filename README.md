@@ -35,6 +35,8 @@ Note: This was created using assets licensed under the Creative Commons Attribut
     https://fontawesome.com/icons/play-circle?style=solid
     https://fontawesome.com/icons/address-card?style=solid
 
+Additionally the `_footer.erb.html` contains a direct link to <a href="https://luxuryelite.bandcamp.com/album/prism">prism by luxury elite</a> for their banger album that jives well with the intended vaporwave asethetic.
+
 ## Licenses
 https://fontawesome.com/license  
 https://creativecommons.org/licenses/by/4.0/
