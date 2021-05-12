@@ -1,8 +1,14 @@
 <%# Display Current User Account Information %>
 <%# Can use a partial layout here and on the edit page %>
 
-<h3> Your Profile: <%= @user.username%>
+<h3> Your Profile: <%= @user.username%> </h3>
 <table>
     <tr><th>Email:</th>             <td><%= @user.email%>
     <tr><th>Account Created:</th>   <td><%= @user.created_at%>
 </table>
+
+<%# Check if the user actually has playlists to display %>
+<%if @user.playlists? %>
+    <h3> Your Playlists: </h3>
+    <% @user.playlists.each do |playlist|%>
+<%end%>

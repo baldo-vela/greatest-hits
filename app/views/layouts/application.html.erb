@@ -22,12 +22,15 @@
              
             </a>
           </li>
-          
+        <% if logged_in? %> 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="" class="nav-link">
               <span class="link-text logo-text">User Profile </span>
             </a>
           </li>
+        <% else %>
+          
+        <% end %>
           <li class="nav-item">
             <a href="/playlists" class="nav-link">
               <span class="link-text logo-text">Playlists </span>

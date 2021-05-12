@@ -3,7 +3,11 @@
 <h1><%= @playlist.name %></h1>
 <div>
     <p> <%= @playlist.description %></p>
-    <p> Created by: <%= User.find_by_id(@playlist.user_id).username%> </p>
+    <p> Created by:<%=if @playlist.spotifyUserID? 
+        @playlist.spotifyUserID 
+        else 
+        User.find_by_id(@playlist.user_id).username 
+        end %> </p>
     <p> Views: <%= @playlist.views %></p>
     <p> Likes: <%= @playlist.likes %></p>
     <p> Dislikes: <%= @playlist.dislikes %></p>
@@ -19,11 +23,9 @@
 <%# List comments below, sure why not use cards again? %>
 
 <%= @comments.each do |c|%>
-    <li>
-        <div class ="card">
-            <%= c.user.username %> 
-            <%= c.body %>
-            <%= c.updated_at%>
-        <div>
-    </li>
+    <div class ="card">
+        <%= c.user.username %> 
+        <%= c.body %>
+        <%= c.updated_at%>
+    <div>
 <% end %>
