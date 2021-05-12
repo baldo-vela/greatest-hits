@@ -1,6 +1,8 @@
-# README
+# Greatest Hits
 
-This project was created in Ruby v2.6.1 with the Rails v6.0.0 framework. The final goal was to gameify user spotify playlists. First importing data from the Spotify API using the RSpotify wrapper gem. It instantiates the parsed data from the API with the gem as ruby hash structures, before iterating through the passed hashes to fill 
+A Ruby on Rails framework for gamifying Spotify user's playlists
+
+This project was created in Ruby v2.6.1 with the Rails v6.0.0 framework. The final goal was to gameify user spotify playlists. First importing data from the Spotify API using the RSpotify wrapper gem. It instantiates the parsed data from the API with the gem as ruby hash structures. Then it iterates through the passed hashes to fill a one of the three local data container models that get pushed to the database running in SQLite3.
 
 Note: This was created using assets licensed under the Creative Commons Attribution 4.0 International license and requires compliance with the following: give appropriate credit, provide a link to the license(https://fontawesome.com/license), and indicate if changes were made. This application was created with no endorsement from the original creator, and the assets used are listed below with direct links:
     https://fontawesome.com/icons/eject?style=solid

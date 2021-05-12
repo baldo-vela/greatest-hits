@@ -1,0 +1,11 @@
+<%# WIP Controller passes this view the Spotify User's playlists %>
+<h3>Would you like to import these playlists from Spotify?</h3>
+<% @playlists.sort.each do |p| %>
+    <%# Iterate through the passed object and display relevant data of each entry %>
+               <div class="card-body">
+                  <strong class="card-text"><%= p.name %></strong>
+                  <p class="card-text"><%= p.description %></p>
+                  <p class="card-text"><%= p.owner.id %></p>
+                  
+
+<% end %>
