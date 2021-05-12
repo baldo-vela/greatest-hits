@@ -1,3 +1,9 @@
+ <%if logged_in?%>
+ <%= button_to 'Log Out', logout_path, class: 'nav-link active', method: 'delete'%>
+
+ <%else%>
  <%= button_to 'Login', login_path, class: 'nav-link active' %>
  <%= button_to 'Login with Spotify', '/auth/spotify', class: 'nav-link active', method: "post" %>
+ <%end%>
+ 
 <%= image_tag("animated_splash.gif",  :alt => "Greatest Hits: splash image", style: 'width:auto; height:auto', class: "center") %>  
