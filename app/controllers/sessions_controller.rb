@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
 
   def logout
     session.clear
-    redirect_to login_path
+    redirect_to welcome_path
   end
 
   def omniauth
