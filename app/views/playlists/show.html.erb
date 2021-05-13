@@ -14,7 +14,7 @@
 </div>
 <%# Like/Dislike buttons Here%>
 
-
+<h3>Drop some feedback on this banger of a playlist</h3>
 <%= form_with(model: [@playlist, @comment]) do |f|%>
     <% f.hidden_field   :user_id,       value: current_user.id  %>
     <% f.hidden_field   :playlist_id,   value: @playlist.id     %>
