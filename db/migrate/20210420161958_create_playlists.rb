@@ -10,7 +10,7 @@ class CreatePlaylists < ActiveRecord::Migration[6.0]
 
       t.integer :likes, default: 0    # Local up-votes
       t.integer :dislikes, default: 0 # Local down-votes
-      t.integer :views                # Local views
+      t.integer :views, default: 0    # Local views
 
       t.timestamps
     end
