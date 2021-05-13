@@ -8,8 +8,12 @@
 </table>
 
 <%# Check if the user actually has playlists to display %>
-<%if @user.playlists? %>
-    <h3> Your Playlists: </h3>
-    <% @user.playlists.each do |playlist|%>
-    <%end%>
+
+<h3> Your Comments: </h3>
+<% @user.comments.each do |comment|%>
+    <div class="card">
+        <strong><%=  comment.playlist.name %></strong>
+        <p><%= comment.body %></p>
+        <p><small><%= comment.updated_at%></small></p>
+    <div>
 <%end%>
