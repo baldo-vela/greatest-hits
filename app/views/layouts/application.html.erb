@@ -12,44 +12,7 @@
   </head>
 
   <body>
-      <nav class ="navbar">
-        <ul class="navbar-nav">
-          <li class="logo">
-            <a href="/" class="nav-link">
-              <%= image_tag('gh_logo.png', width: '40rem', height: '40rem') %>
-              <span class="link-text logo-text">Greatest Hits </span>
-              
-             
-            </a>
-          </li>
-        <% if logged_in? %> 
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <span class="link-text logo-text">User Profile </span>
-            </a>
-          </li>
-        <% else %>
-          <li>
-            <%= button_to 'Login', login_path, class: 'nav-link active' %>
-          </li>
-          <li>
-            <%= button_to 'Login with Spotify', '/auth/spotify', class: 'nav-link active', method: "post" %>
-          </li>
-        <% end %>
-          <li class="nav-item">
-            <a href="/playlists" class="nav-link">
-              <span class="link-text logo-text">Playlists </span>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="" class="nav-link">
-              <span class="link-text logo-text">Logout</span>
-            </a>
-          </li>
-
-        </ul>
-      </nav>
+    <%= render(partial: "layouts/nav") %>  
     <%= yield %>
   </body>
  <footer class="footer" data-turbolinks-permanent>
