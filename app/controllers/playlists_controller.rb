@@ -1,4 +1,7 @@
 class PlaylistsController < ApplicationController
+    #Check if a user is logged in, then allow only #new, #create, & #update actions
+    before_action :redirect_if_not_logged_in, only: [:new, :create, :update]
+
     def index
         @playlists = Playlist.all 
     end
@@ -7,6 +10,7 @@ class PlaylistsController < ApplicationController
         @playlist = Playlist.find(params[:id])
         @comments = @playlist.comments
         @comment = @playlist.comments.build(user_id: current_user.id)
+        # WIP 
         #@playlist.update(views: @playlist.views+1)
     end
 
