@@ -15,21 +15,23 @@
 <%# Like/Dislike buttons Here%>
 
 <h3>Drop some feedback on this banger of a playlist</h3>
+
 <%= form_with(model: [@playlist, @comment]) do |f|%>
     <% f.hidden_field   :user_id,       value: current_user.id  %>
     <% f.hidden_field   :playlist_id,   value: @playlist.id     %>
     <%= f.text_area     :body                                   %>
     <%= f.submit        :comment                                %>
-    <%#byebug %>
 <% end %>
 
 <%# List comments below, sure why not use cards again? %>
-<%=@comments.length%>
 <h3>Comments:</h3>
 <% @comments.each do |comment|%>
-    <div class="card">
-        <strong><%=  comment.user.username %> Said:</strong> 
-        <p><%= comment.body %></p>
-        <p><small><%= comment.updated_at%></small></p>
-    <div>
+    <%if comment.id?%>
+        <div class="card">
+            <%=comment.id%>
+            <strong><%=  comment.user.username %> Said:</strong> 
+            <p><%= comment.body %></p>
+            <p><small><%= comment.updated_at%></small></p>
+        <div>
+    <%end%>
 <% end %>
