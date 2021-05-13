@@ -1,10 +1,18 @@
 <%# <%= index_header %> 
 <h1>The Playlists</h1>
+
+<%# Search Bar%>
+<%= form_with(url: search_path, method: 'get', class: 'd-flex') do |f|%>
+   <%= f.text_field :title, class: "form-control me-2", placeholder: "Search for Title" %>
+   <%= f.submit :search, class: "btn btn-outline-success" %>
+<% end %>
+
+<%# List of all Playlists%>
 <div class="album text-muted">
    <div class="container">
       <div class="row">
          <% @playlists.each do |p| %>
-            <%#= render partial: 'card', :playlist => p %>
+            <%#= Replace this with render partial: 'card', :playlist => p %>
             <a href="/playlists/<%= p.id %>" class="card" style="width: 15rm; display: inline-block">
                <div class="card-body">
                   <strong class="card-text"><%= p.name %></strong>

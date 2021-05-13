@@ -24,6 +24,11 @@ class PlaylistsController < ApplicationController
         end
     end
 
+    def search
+        @playlists = Playlist.search(params[:name])
+        render :index
+    end
+
     #-----Helpers & Private Methods------
     private
     def playlist_params

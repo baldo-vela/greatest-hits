@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   #Spotifiy Callback
   get '/auth/spotify/callback', to: 'sessions#omniauth'
+  get '/search', to: 'playlists#search', as: 'search'
 
   resources :tracks
   resources :playlists do

@@ -41,4 +41,15 @@ if Playlist.all.empty?
         puts "Retrieved Playlist: #{temp.name}"
         test = Playlist.create_from_spotify(temp)
     end
+    puts "Seeded #{Playlist.all.count} Playlists"
+end
+
+if Comment.all.empty?
+    puts "Seeding Comments" 
+    Playlist.all.each do |playlist|
+        Comment.create(user_id: 2, playlist_id: playlist.id, body: "This playlist is fire, I should know. I'm Professor Cane!")
+    end
+    puts "Created #{Comment.all.count} Comments"
+else
+    puts "Comment system already contains data"
 end
