@@ -42,14 +42,17 @@ if Playlist.all.empty?
         test = Playlist.create_from_spotify(temp)
     end
     puts "Seeded #{Playlist.all.count} Playlists"
+else
+    puts "Abort error: Playlist Database Exists already"
 end
 
 if Comment.all.empty?
     puts "Seeding Comments" 
     Playlist.all.each do |playlist|
         Comment.create(user_id: 2, playlist_id: playlist.id, body: "This playlist is fire, I should know. I'm Professor Cane!")
+        puts "Seeded a comment for #{playlist.name}'"
     end
     puts "Created #{Comment.all.count} Comments"
 else
-    puts "Comment system already contains data"
+    puts "Abort Error: Comment system already contains data"
 end

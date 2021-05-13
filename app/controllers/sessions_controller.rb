@@ -1,9 +1,9 @@
 class SessionsController < ApplicationController
   def create
-    @user = User.find_by_username(params[:user][:username])
-    if @user && @user.authenticate(params[:user][:password])
+    user = User.find_by_username(params[:user][:username])
+    if user && @user.authenticate(params[:user][:password])
       flash[:message] = "Logged in"
-      session[:user_id] = @user.id
+      session[:user_id] = user.id
       redirect_to playlists_path
     else
       flash[:message] = "Please check your Username and Password"

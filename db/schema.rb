@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2021_05_06_232653) do
     t.integer "followers"
     t.integer "likes", default: 0
     t.integer "dislikes", default: 0
-    t.integer "views"
+    t.integer "views", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
