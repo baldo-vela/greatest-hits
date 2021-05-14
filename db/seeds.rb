@@ -37,7 +37,7 @@ if Playlist.all.empty?
             '0tKl4orQrCG2wbWPJjYg8k', 
         ]
     Starter_Playlists.each do |t|
-        temp = RSpotify::Playlist.find_by_id(t)
+        temp = Playlist.find_from_spotify_id(t)
         puts "Retrieved Playlist: #{temp.name}"
         test = Playlist.create_from_spotify(temp)
     end

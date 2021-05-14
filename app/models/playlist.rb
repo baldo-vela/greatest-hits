@@ -25,9 +25,9 @@ class Playlist < ApplicationRecord
             followers: spotify_playlist.followers.count)
             
             #WIP, need to iterate though each track object, may need to pass additional arguments for proper ownership
-            spotify_playlist.tracks.each do |track|
-                Track.create_from_spotify(track)
-            end        
+            # spotify_playlist.tracks.each do |track|
+            #    Track.create_from_spotify(track)
+            # end        
             
     end
 
@@ -35,6 +35,12 @@ class Playlist < ApplicationRecord
         playlist = self.new_from_spotify(spotify_playlist)
         playlist.save
         return playlist
+    end
+
+    def self.find_from_spotify_id(spotify_id)
+        #created to dry up seeding, and assist in building more complex methods
+        return RSpotify::Playlist.find_by_id(spotify_id)
+
     end
 
     #need a method that uses the RSpotify playlist.tracks array to instance new local track objects 
