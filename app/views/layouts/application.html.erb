@@ -12,7 +12,8 @@
   </head>
 
   <body>
-    <%= render(partial: "layouts/nav") %>  
+    <%= render(partial: "layouts/nav") %> 
+    <%= flash[:message] %> 
     <%= yield %>
   </body>
  <footer class="footer" data-turbolinks-permanent>

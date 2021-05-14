@@ -22,7 +22,12 @@ class Playlist < ApplicationRecord
             description: spotify_playlist.description,
             spotifyPlaylistID: spotify_playlist.id,
             spotifyUserID: spotify_playlist.owner.id,
-            followers: spotify_playlist.followers.count)        
+            followers: spotify_playlist.followers.count)
+            
+            #WIP, need to iterate though each track object, may need to pass additional arguments for proper ownership
+            spotify_playlist.tracks.each do |track|
+                Track.create_from_spotify(track)
+            end        
             
     end
 
