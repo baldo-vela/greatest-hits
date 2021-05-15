@@ -34,7 +34,8 @@ if Playlist.all.empty?
             '37i9dQZF1DWWMOmoXKqHTD',
             '3hoI0s5TLdpPMcimSRmQpj',
             '4sgUux9hmykyWYmVoe4W6p', 
-            '0tKl4orQrCG2wbWPJjYg8k', 
+            '0tKl4orQrCG2wbWPJjYg8k',
+            '00Xwq26dSetipYffuUutFL' 
         ]
     Starter_Playlists.each do |t|
         temp = Playlist.find_from_spotify_id(t)
