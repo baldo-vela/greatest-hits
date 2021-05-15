@@ -1,4 +1,17 @@
-name: spotify_track.name,
-artists: spotify_track.artists[0].name,
-img: spotify_track.album.images[0]["url"],
-preview: spotify_track.preview_url
+<%# This partial is for keeping Track object views DRY%>
+<%# 
+create_table "tracks", force: :cascade do |t|
+    t.string "name"
+    t.string "spotify_id"
+    t.string "artists"
+    t.string "img"
+    t.string "url"
+    t.string "preview"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+ %>
+<div class="card">
+    <strong class="card-text"><%= track.name %></strong>
+    <a href="<%= track_path(track) %>"><a>
+
+</div>

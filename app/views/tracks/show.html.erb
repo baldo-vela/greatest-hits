@@ -1,10 +1,3 @@
 <%= render partial: 'errors/errors', locals: {model: @track} %>
 
-<h1><%= @track.name %></h1>
-<div>
-    <p> Artist: <%= @track.artist %></p>
-    <p> Likes: <%= @track.likes %></p>
-    <p> Dislikes: <%= @track.dislikes %></p>
-</div>
-
-<%= link_to 'back', tracks_path %>
+<%= render partials: 'tracks/track', locals: {track: @track} %>
