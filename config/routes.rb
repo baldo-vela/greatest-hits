@@ -17,8 +17,8 @@ Rails.application.routes.draw do
 
   resources :tracks
   resources :playlists do
-    resources :comments, only: [:new, :create]
-    resources :tracks, only: [:index, :new, :create]
+    resources :comments, only: [:new, :create, :delete]
+    resources :tracks, only: [:index]
   end
 
   resources :users
