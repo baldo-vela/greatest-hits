@@ -12,10 +12,10 @@ class Playlist < ApplicationRecord
     # https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M
 
     scope :search, -> (query) { self.where("name LIKE ?", "%#{query}%") }
-
-    def self.new_from_spotify(spotify_playlist, user_id = 1)
+#
+    def self.new_from_spotify(spotify_playlist, user_id = 2)
         #pass in an RSpotify playlist object
-        #During seeding we assume Professor Reed is the user
+        #During seeding we assume Professor Reed is the User.all[1], but their Id is 2
         Playlist.new(
             name: spotify_playlist.name,
             user_id: user_id,
@@ -37,8 +37,10 @@ class Playlist < ApplicationRecord
         return playlist
     end
 
+# Spotify ID based Methods
+
     def self.find_from_spotify_id(spotify_id)
-        #created to dry up seeding, and assist in building more complex methods
+        # created to dry up seeding, and assist in building more complex methods
         return RSpotify::Playlist.find_by_id(spotify_id)
 
     end
