@@ -30,12 +30,18 @@
             <%= button_to 'Login with Spotify', '/auth/spotify', class: 'nav-link active', method: "post" %>
           </li>
           
+          
         <% end %>
           <li class="nav-item">
             <a href="/playlists" class="nav-link">
               <span class="link-text logo-text">Playlists </span>
             </a>
           </li>
-
+          <li>
+            <%= form_with(url: search_path, method: 'get', class: 'd-flex') do |f|%>
+              <%= f.text_field :name, class: "form-control me-2", placeholder: "Search for Playlist" %>
+              <%= f.submit :Search, class: "btn btn-outline-success" %>
+            <% end %>
+          </li>
         </ul>
       </nav>

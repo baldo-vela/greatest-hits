@@ -51,5 +51,5 @@ class Playlist < ApplicationRecord
         self.find_from_spotify_id(spotify_id)
 
     #need a method that uses the RSpotify playlist.tracks array to instance new local track objects 
-
+    end
 end

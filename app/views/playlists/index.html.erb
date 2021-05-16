@@ -2,7 +2,7 @@
 <h1>The Playlists</h1>
 <%# Search Bar%>
 <%= form_with(url: search_path, method: 'get', class: 'd-flex') do |f|%>
-   <%= f.text_field :title, class: "form-control me-2", placeholder: "Search for Title" %>
+   <%= f.text_field :name, class: "form-control me-2", placeholder: "Search for Playlists" %>
    <%= f.submit :search, class: "btn btn-outline-success" %>
 <% end %>
 
