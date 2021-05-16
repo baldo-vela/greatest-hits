@@ -14,6 +14,19 @@
 </div>
 <%# Like/Dislike buttons Here%>
 
+<%# Render all the tracks in this playlist below, ideally with a common card partial %>
+<% if @playlist.tracks?%>
+    <table>
+        <% @playlist.tracks.each do |track|%>
+            <tr>
+                <td><%=track.name %></td>
+                <td><%=track.artists %></td>
+                <td><%=track.name %></td>
+            </tr>
+        <%end%>
+    </table>
+<%end%>
+
 <h3>Drop some feedback on this banger of a playlist</h3>
 
 <%= form_with(model: [@playlist, @comment]) do |f|%>
@@ -21,7 +34,7 @@
     <%= f.submit        :comment                                %>
 <% end %>
 
-<%# List comments below, sure why not use cards again? %>
+<%# List comments below, sure why not use cards again? Ideally refactor this to use a common partial %>
 <h3>Comments:</h3>
 <% @comments.each do |comment|%>
     <%if comment.id?%>
