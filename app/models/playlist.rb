@@ -34,7 +34,8 @@ class Playlist < ApplicationRecord
     def self.create_from_spotify(spotify_playlist)
         playlist = self.new_from_spotify(spotify_playlist)
         playlist.save
-        return playlist
+        Track.newTracks_from_playlist(playlist)
+       
     end
 
 # Spotify ID based Methods
@@ -44,6 +45,10 @@ class Playlist < ApplicationRecord
         return RSpotify::Playlist.find_by_id(spotify_id)
 
     end
+
+    def self.create_from_spotify_id(spotify_id)
+        self.
+        self.find_from_spotify_id(spotify_id)
 
     #need a method that uses the RSpotify playlist.tracks array to instance new local track objects 
 
