@@ -12,8 +12,11 @@
   </head>
 
   <body>
-    <%= render(partial: "layouts/nav") %> 
-    <%= flash[:message] %> 
+    <%# Renders the nav bar%>
+    <%= render(partial: "layouts/nav") %>
+    <%# displays any flash messages%> 
+    <%= flash[:message] %>
+    <%# compelted view gets rendered here %> 
     <%= yield %>
   </body>
  <footer class="footer" data-turbolinks-permanent>
