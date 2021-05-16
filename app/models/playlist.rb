@@ -2,7 +2,8 @@ class Playlist < ApplicationRecord
     belongs_to  :user
     has_many :tracks
 
-    has_many :comments
+    has_many :comments, dependent: :destroy
+    # `depedent: :destroy` will nuke comment children upon deletion of the parent playlist
     has_many :users, through: :comments
     
     validates :name, presence: true
