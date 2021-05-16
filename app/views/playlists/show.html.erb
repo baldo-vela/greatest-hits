@@ -26,7 +26,6 @@
 <% @comments.each do |comment|%>
     <%if comment.id?%>
         <div class="card">
-            <%=comment.id%>
             <strong><%=  comment.user.username %> Said:</strong> 
             <p><%= comment.body %></p>
             <p><small><%= comment.updated_at%></small></p>

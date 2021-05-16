@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+    before_action :comment_params
+    #ensures that the private strong params method is always executed before any comment action
 
     def create
         @playlist = Playlist.find_by_id(params[:playlist_id])
