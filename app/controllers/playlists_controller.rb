@@ -8,8 +8,12 @@ class PlaylistsController < ApplicationController
     
     def show
         @playlist = Playlist.find(params[:id])
+        #provides the set of comments to render
         @comments = @playlist.comments
+        #preps for a new comment
         @comment = @playlist.comments.build(user_id: current_user.id)
+        #sets the tracks to render
+        @tracks = @playlist.tracks
         # WIP 
         #@playlist.update(views: @playlist.views+1)
     end
