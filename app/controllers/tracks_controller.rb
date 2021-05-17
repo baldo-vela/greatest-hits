@@ -1,6 +1,11 @@
 class TracksController < ApplicationController
     def index
-        @tracks = Track.all
+        if params[:playlist_id] 
+            @tracks = Playlist.find(params[:playlist_id]).tracks
+        else
+            @tracks = Track.all
+        end
+        #byebug
         #render json: @tracks 
     end
 

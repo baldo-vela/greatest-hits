@@ -15,7 +15,7 @@
 <%# Like/Dislike buttons Here%>
 
 <%# Render all the tracks in this playlist below, ideally with a common card partial %>
-<% if @playlist.tracks?%>
+
     <table>
         <% @playlist.tracks.each do |track|%>
             <tr>
@@ -25,7 +25,7 @@
             </tr>
         <%end%>
     </table>
-<%end%>
+
 
 <h3>Drop some feedback on this banger of a playlist</h3>
 

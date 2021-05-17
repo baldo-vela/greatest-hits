@@ -1,3 +1,12 @@
-<%= render partial: 'errors/errors', locals: {model: @track} %>
 
 <h1>The Track-Dex</h1>
+<table>
+    <% @tracks.each do |track|%>
+        <tr>
+            <td><%=track.name %></td>
+            <td><%=track.artists %></td>
+            <td><%=track.name %></td>
+        </tr>
+    <% end %>
+</table>
+  

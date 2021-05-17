@@ -15,6 +15,9 @@
         <strong><%=  comment.playlist.name %></strong>
         <p><%= comment.body %></p>
         <p><small><%= comment.updated_at%></small></p>
+        <% if current_user.id == comment.user_id %>
+            <%= button_to 'Delete', [@user, comment], method: :delete %>
+        <% end %>
     <div>
 <%end%>
 

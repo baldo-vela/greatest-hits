@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-    before_action :comment_params
+    before_action :comment_params, except:[:destroy]
     #ensures that the private strong params method is always executed before any comment action
 
     def create
@@ -17,8 +17,15 @@ class CommentsController < ApplicationController
 
     end
 
+    def destroy
+        @comment = Comment.find(params[:id])
+        @comment.destroy
+        flash[:message] = "Comment Deleted"
+        redirect_to User.find(params[:user_id])
+    end
+
     private
     def comment_params
-        params.require(:comment).permit(:body, :playlist_id, :user_id)
+        params.require(:comment).permit(:id, :body, :playlist_id, :user_id)
     end
 end
