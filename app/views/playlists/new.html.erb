@@ -7,13 +7,14 @@
 
 <h3> Import a new Playlist from Spotify Manually </h3>
 <%= form_with(model: @playlist, url: new_playlist_path) do |f|%>
-    <%= f.label         :name %>
-    <%= f.text_field    :name, placeholder: "Playlist Name "%>
-    <%= f.label         :description %>
-    <%= f.text_field    :description, placeholder: "Description"%>
-    <%= f.label         :spotifyPlaylistID  %>
-    <%= f.text_field    :spotifyPlaylistID, placeholder: "Spotify Playlist ID "%>
-    <%= f.label         :spotifyUserID  %>
-    <%= f.text_field    :spotifyUserID, placeholder: "Spotify User Name"%>
-    <%= f.submit :new, class: 'btn btn-outline-success' %>
+<ul>
+    <div><%= f.label         :name %></div>
+    <div><%= f.text_field    :name, placeholder: "Playlist Name "%></div>
+    <div><%= f.label         :description %></div>
+    <div><%= f.text_field    :description, placeholder: "Description"%></div>
+    <div><%= f.label         :spotifyPlaylistID  %></div>
+    <div><%= f.text_field    :spotifyPlaylistID, placeholder: "Spotify Playlist ID "%></div>
+    <div><%= f.label         :spotifyUserID  %></div>
+    <div><%= f.text_field    :spotifyUserID, placeholder: "Spotify User Name"%></div>
+    <div><%= f.submit :new, class: 'btn btn-outline-success' %></div>
 <% end %>
