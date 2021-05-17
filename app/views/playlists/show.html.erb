@@ -13,7 +13,9 @@
     <p> Dislikes: <%= @playlist.dislikes %></p>
 </div>
 <%# Like/Dislike buttons Here%>
-
+<%#= button_to "Like", like_playlist(@playlist), class: 'button' %>
+<%# Litterally Rails: button helper, it's lable, the url with (param), object class%>
+<%#= button_to "Dislike", dislike_playlist(@playlist), class:'button'%>
 <%# Render all the tracks in this playlist below, ideally with a common card partial %>
 
     <table>

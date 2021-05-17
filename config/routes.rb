@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   get '/auth/spotify/callback', to: 'sessions#omniauth'
   get '/search', to: 'playlists#search', as: 'search'
 
+  #Like and Dislike a Playlist WIP
+  post '/playlists/:id/dislike', to: 'playlist#dislike', as: 'dislike_playlist'
+  post '/playlists/:id/like', to: 'playlist#like', as: 'like_playlist'
+
   resources :tracks
   resources :playlists, only: [:new, :create, :destroy, :import]
   resources :playlists do
