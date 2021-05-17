@@ -1,0 +1,5 @@
+Switch everything to snake case, for consitency 
+Replace all urls with `link_to`
+Apply more styling
+Fix Playlist like/dislikes
+Build a battle System
