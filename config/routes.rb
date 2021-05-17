@@ -35,8 +35,8 @@ Rails.application.routes.draw do
   resources :users do
     resources :comments, only: [:index, :destroy]
     #just index and deletion for now, editing will probably be better handled with JS framework
-    resources :playlists, only: [:index,:show, :new, :destroy]
-    #show all user_playlists, show an individual one, allow them to create new ones, and delete existing lists they own
+    resources :playlists, only: [:index, :show, :destroy]
+    #show all user_playlists, show an individual one, and delete existing lists they own
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
