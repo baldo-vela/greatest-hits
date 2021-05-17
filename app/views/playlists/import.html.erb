@@ -1,11 +1,12 @@
-<%# WIP Controller passes this view the Spotify User's playlists %>
-<h3>Would you like to import these playlists from Spotify?</h3>
-<% @playlists.sort.each do |p| %>
-    <%# Iterate through the passed object and display relevant data of each entry %>
-               <div class="card-body">
-                  <strong class="card-text"><%= p.name %></strong>
-                  <p class="card-text"><%= p.description %></p>
-                  <p class="card-text"><%= p.owner.id %></p>
-                  
+<%#A form to import a specific Spotify Playlist by ID, using current user ID%>
+<%# Refactor this later for better user experience%>
 
+<%# test = Playlist.new_from_spotify(Playlist.find_from_spotify_id('1fAyMF8A9yuQmSTX3YjVOK'), user_id = 3)%>
+<%# Playlist.create_from_spotify(params%>
+<%#= render partial: 'errors/errors', locals: {model: @playlist} %>
+
+<h3> Import a new Playlist from Spotify </h3>
+<%= form_with(model: @playlist, url: new_playlist_path) do |f|%>
+    <%= f.text_field :spotify_id, class: "form-control me-2", placeholder: "Put Spotify Playlist ID Key here"%>
+    <%= f.submit :new, class: 'btn btn-outline-success' %>
 <% end %>

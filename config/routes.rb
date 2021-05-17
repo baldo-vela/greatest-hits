@@ -17,7 +17,9 @@ Rails.application.routes.draw do
 
   resources :tracks
   resources :playlists do
-    resources :comments, only: [:new, :create, :destroy]
+    resources :comments, only: [:new, :create, :import, :destroy]
+    #New is just a placeholder form for handling serialzed Playlist objects when a spotify user signs in. 
+    #Import is a custom route that will import a playlist and it's tracks from a public spotify ID key
     resources :tracks, only: [:index]
   end
 

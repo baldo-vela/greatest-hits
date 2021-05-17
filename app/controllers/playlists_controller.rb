@@ -20,11 +20,17 @@ class PlaylistsController < ApplicationController
 
     def new
         @playlist = Playlist.new
+        
+    end
+    def create
+        #Ugh we'll use a manual form for now till slightly less jank import action works
+        @playlist = Playlist.new(playlist_params)
     end
 
-    def create
+    def import
         #WIP
         @playlist = Playlist.new(playlist_params)
+        byebug
         if @playlist.save
             redirect_to playlist_path(@playlist)
         else

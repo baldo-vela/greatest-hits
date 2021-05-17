@@ -1,9 +1,19 @@
 <%#A form to import a specific Spotify Playlist by ID, using current user ID%>
 <%# Refactor this later for better user experience%>
+
+<%# test = Playlist.new_from_spotify(Playlist.find_from_spotify_id('1fAyMF8A9yuQmSTX3YjVOK'), user_id = 3)%>
+<%# Playlist.create_from_spotify(params%>
 <%= render partial: 'errors/errors', locals: {model: @playlist} %>
 
-<h3> Import a new Playlist from Spotify </h3>
-<%= form_with(url: 'playlists#new', method: 'new', class: 'd-flex') do |f|%>
-    <%= f.text_field :spotify_id, class: "form-control me-2", placeholder: "Put Spotify Playlist ID Key here"%>
+<h3> Import a new Playlist from Spotify Manually </h3>
+<%= form_with(model: @playlist, url: new_playlist_path) do |f|%>
+    <%= f.label         :name %>
+    <%= f.text_field    :name, placeholder: "Playlist Name "%>
+    <%= f.label         :description %>
+    <%= f.text_field    :description, placeholder: "Description"%>
+    <%= f.label         :spotifyPlaylistID  %>
+    <%= f.text_field    :spotifyPlaylistID, placeholder: "Spotify Playlist ID "%>
+    <%= f.label         :spotifyUserID  %>
+    <%= f.text_field    :spotifyUserID, placeholder: "Spotify User Name"%>
     <%= f.submit :new, class: 'btn btn-outline-success' %>
 <% end %>
