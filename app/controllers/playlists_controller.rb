@@ -19,11 +19,13 @@ class PlaylistsController < ApplicationController
     end
 
     def new
+        #Provides a manual form for now till slightly less jank import action works
         @playlist = Playlist.new
         
     end
     def import
-        #Ugh we'll use a manual form for now till slightly less jank import action works
+        #TODO: create a container, send a form to input a spotify ID
+        #use Playlist.
         @playlist = Playlist.new(playlist_params)
     end
 
