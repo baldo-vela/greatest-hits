@@ -38,13 +38,12 @@ ActiveRecord::Schema.define(version: 2021_05_06_232653) do
     t.string "name"
     t.string "spotify_id"
     t.string "artists"
-    t.string "img"
     t.string "url"
     t.string "preview"
-    t.integer "playlist_id_id"
+    t.integer "playlist_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["playlist_id_id"], name: "index_tracks_on_playlist_id_id"
+    t.index ["playlist_id"], name: "index_tracks_on_playlist_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -57,4 +56,5 @@ ActiveRecord::Schema.define(version: 2021_05_06_232653) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "tracks", "playlists"
 end

@@ -40,7 +40,7 @@ if Playlist.all.empty?
     Starter_Playlists.each do |t|
         temp = Playlist.find_from_spotify_id(t)
         puts "Retrieved Playlist: #{temp.name}"
-        test = Playlist.create_from_spotify(temp)
+        Playlist.create_from_spotify(temp)
     end
     puts "Seeded #{Playlist.all.count} Playlists"
 else
