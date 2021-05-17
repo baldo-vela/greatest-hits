@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   resources :tracks
   resources :playlists, only: [:new, :create, :destroy]
-  #CUSTOM ROUTE to handle janky direct spotify import task
+  #CUSTOM ROUTES to handle direct spotify import cludge
   get '/playlists/import', to: 'playlist#import', as: 'import_playlist'
   post '/playlist/import', to: 'playlists#spotify_create', as: 'spotify_import'
 

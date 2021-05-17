@@ -28,7 +28,11 @@ class PlaylistsController < ApplicationController
         #TODO: send a form to input a spotify ID
         #use Playlist#create_from_spotify to pull all the data from a new playlist from spotify into the new container, and save it to the DB
         # Console example: test = Playlist.new_from_spotify(Playlist.find_from_spotify_id('1fAyMF8A9yuQmSTX3YjVOK'), user_id = 3)
-        @playlist = Playlist.new(playlist_params)
+        @playlist = Playlist.new(params[:spotify_id])
+    end
+
+    def spotify_create
+
     end
 
     def create
