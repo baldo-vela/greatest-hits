@@ -32,9 +32,9 @@ class Playlist < ApplicationRecord
             
     end
 
-    def self.create_from_spotify(spotify_playlist)
+    def self.create_from_spotify(spotify_playlist, user_id = 2)
         #Need to add a user_id to this method params
-        playlist = self.new_from_spotify(spotify_playlist)
+        playlist = self.new_from_spotify(spotify_playlist, user_id)
         playlist.save
         Track.newTracks_from_playlist(spotify_playlist, playlist.id)
        
