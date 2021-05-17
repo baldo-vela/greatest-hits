@@ -1,5 +1,10 @@
+## Thanks to Nick and Eri' for their notes on how to improve this app.
 Switch everything to snake case, for consitency 
-Replace all urls with `link_to`
-Apply more styling
+Replace all naked urls with `link_to`
+
+
+Personal Stretch Goals:
+Replace 'button_to' with 'link_to'
+Apply more styling and implement SVG icons
 Fix Playlist like/dislikes
-Build a battle System
+Build a battle System as a process
