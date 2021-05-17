@@ -1,5 +1,6 @@
 class Track < ApplicationRecord
     # Associations
+    # A track may belong to many playlists
     belongs_to :playlist
 
     # Validations

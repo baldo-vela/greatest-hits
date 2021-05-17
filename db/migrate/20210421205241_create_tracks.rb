@@ -7,6 +7,7 @@ class CreateTracks < ActiveRecord::Migration[6.0]
       t.string :img
       t.string :url
       t.string :preview
+      t.references :playlist_id
 
       t.timestamps
     end

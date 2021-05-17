@@ -41,8 +41,10 @@ ActiveRecord::Schema.define(version: 2021_05_06_232653) do
     t.string "img"
     t.string "url"
     t.string "preview"
+    t.integer "playlist_id_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["playlist_id_id"], name: "index_tracks_on_playlist_id_id"
   end
 
   create_table "users", force: :cascade do |t|
