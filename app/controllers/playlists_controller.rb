@@ -21,16 +21,18 @@ class PlaylistsController < ApplicationController
     def new
         #Provides a manual form for now till slightly less jank import action works
         @playlist = Playlist.new
-        
+        #This is an empty container, that is not yet saved to the DB
     end
     def import
-        #TODO: create a container, send a form to input a spotify ID
-        #use Playlist.
+        #creates an empty container 
+        #TODO: send a form to input a spotify ID
+        #use Playlist#create_from_spotify to pull all the data from a new playlist from spotify into the new container, and save it to the DB
+        # Console example: test = Playlist.new_from_spotify(Playlist.find_from_spotify_id('1fAyMF8A9yuQmSTX3YjVOK'), user_id = 3)
         @playlist = Playlist.new(playlist_params)
     end
 
     def create
-        #WIP
+        #WIP, should 
         byebug
         @playlist = Playlist.new(playlist_params)
         if @playlist.save
