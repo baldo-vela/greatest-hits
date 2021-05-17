@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   post '/playlists/:id/like', to: 'playlist#like', as: 'like_playlist'
 
   resources :tracks
-  resources :playlists, only: [:new, :create, :destroy, :import]
+  resources :playlists, only: [:new, :create, :destroy]
   resources :playlists do
     resources :comments, only: [:new, :create, :destroy]
     #New is just a placeholder form for handling serialzed Playlist objects when a spotify user signs in. 
