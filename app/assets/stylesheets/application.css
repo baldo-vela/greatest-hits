@@ -15,7 +15,7 @@
  */
 
  /* Color palette composed at https://coolors.co/27163f-31081f-6b0f1a-595959-808f85 */
- /*
+ 
  :root {
   font-size: 16px;
   font-family: 'Share Tech Mono', monospace;
@@ -29,7 +29,7 @@
  body {
     color: black;
     background-color: white;
-    margin: 0;
+    margin: 1rem;
     padding: 0;
      
  }
@@ -60,7 +60,7 @@
     margin-right: auto;
     width: 50%;
   }
-
+/*
   .navbar {
     width: 9rem;
     height: 100vh;
@@ -98,9 +98,9 @@
     height: 5rem;
 
   }
-  
+  */
   .link-text {
-    display: none;
+    
     margin-left: 1rem;
   }
   .nav-link svg {
