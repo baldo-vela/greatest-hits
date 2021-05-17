@@ -15,7 +15,7 @@
           </li>
         <% if logged_in? %> 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="/users/<%= current_user.id %>" class="nav-link">
               <span class="link-text logo-text">User Profile </span>
             </a>
           </li>
