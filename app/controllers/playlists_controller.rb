@@ -38,6 +38,7 @@ class PlaylistsController < ApplicationController
         end
     end
 
+    def like
     def search
         @playlists = Playlist.search(params[:name])
         render :index
