@@ -22,8 +22,8 @@ Rails.application.routes.draw do
   resources :tracks
   resources :playlists, only: [:new, :create, :destroy]
   #CUSTOM ROUTES to handle direct spotify import cludge
-  get '/playlists/import', to: 'playlist#import', as: 'import_playlist'
-  post '/playlist/import', to: 'playlists#spotify_create', as: 'spotify_import'
+  get '/playlists/import', to: 'playlists#import', as: 'import_playlist'
+  post '/playlists/import', to: 'playlists#spotify_create', as: 'spotify_import'
 
   resources :playlists do
     resources :comments, only: [:new, :create, :destroy]

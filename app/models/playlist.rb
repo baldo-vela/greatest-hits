@@ -1,6 +1,6 @@
 class Playlist < ApplicationRecord
     belongs_to  :user
-    has_many :tracks
+    has_many :tracks, dependent: :destroy
 
     has_many :comments, dependent: :destroy
     # `depedent: :destroy` will nuke comment children upon deletion of the parent playlist
@@ -48,9 +48,11 @@ class Playlist < ApplicationRecord
 
     end
 
-    def self.create_from_spotify_id(spotify_id)
-        self.find_from_spotify_id(spotify_id)
-
+    def self.create_from_spotify_id(spotify_id, user_id)
+        self.create_from_spotify(
+            self.find_from_spotify_id(spotify_id), 
+            user_id)
+            
     #need a method that uses the RSpotify playlist.tracks array to instance new local track objects 
     end
 end

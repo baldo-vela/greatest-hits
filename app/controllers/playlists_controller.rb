@@ -32,7 +32,10 @@ class PlaylistsController < ApplicationController
     end
 
     def spotify_create
-
+        
+        @playlist = Playlist.create_from_spotify_id(params[:spotify_id], current_user.id)
+        byebug
+        redirect_to playlist_path(@playlist)
     end
 
     def create
@@ -49,6 +52,7 @@ class PlaylistsController < ApplicationController
     def like
         #WIP
     end
+
     def search
         @playlists = Playlist.search(params[:name])
         render :index
@@ -60,6 +64,9 @@ class PlaylistsController < ApplicationController
         params.require(:playlist).permit(:name, :user_id, :description, :spotifyPlaylistID, :spotifyUserID)
     end
 
+    def import_params
+        params.require(:playlist).permit(:spotify_id, :user_id)
+    end
     def find_playlist
         @playlist = Playlist.find_by_id(params[:playlist_id])
     end
