@@ -21,6 +21,10 @@ Rails.application.routes.draw do
 
   resources :tracks
   resources :playlists, only: [:new, :create, :destroy]
+  #CUSTOM ROUTE to handle janky direct spotify import task
+  get '/playlists/import', to: 'playlist#import', as: 'import_playlist'
+  post '/playlist/import', to: 'playlists#spotify_create', as: 'spotify_import'
+
   resources :playlists do
     resources :comments, only: [:new, :create, :destroy]
     #New is just a placeholder form for handling serialzed Playlist objects when a spotify user signs in. 

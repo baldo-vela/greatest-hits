@@ -6,7 +6,7 @@
 <%#= render partial: 'errors/errors', locals: {model: @playlist} %>
 
 <h3> Import a new Playlist from Spotify </h3>
-<%= form_with(model: @playlist, url: new_playlist_path) do |f|%>
+<%= form_tag(import_playlist_path) do |f|%>
     <%= f.text_field :spotify_id, class: "form-control me-2", placeholder: "Put Spotify Playlist ID Key here"%>
     <%= f.submit :new, class: 'btn btn-outline-success' %>
 <% end %>
