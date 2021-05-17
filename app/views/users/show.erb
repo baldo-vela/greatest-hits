@@ -12,14 +12,17 @@
        <div class="album text-muted">
             <div class="container">
                 <div class="row">
-                    <% @playlists.each do |p| %>
+                    <% @playlists.each do |playlist| %>
                         <%#= Replace this with render partial: 'card', :playlist => p %>
-                        <a href="/playlists/<%= p.id %>" class="card" style="width: 15rm; display: inline-block">
+                        <a href="/playlists/<%= playlist.id %>" class="card" style="width: 15rm; display: inline-block">
                             <div class="card-body">
-                            <strong class="card-text"><%= p.name %></strong>
-                            <p class="card-text">Views:<%= p.views %></p>
-                            <p class="card-text">Score:<%= p.likes %></p>
-                        
+                            <strong class="card-text"><%= playlist.name %></strong>
+                            <p class="card-text">Views:<%= playlist.views %></p>
+                            <p class="card-text">Score:<%= playlist.likes %></p>
+                            <% if current_user.id == playlist.user_id %>
+                                <p><%= button_to 'Delete', [@user, playlist], method: :delete %></p>
+                            <% end %>
+                            </div>
                         </a>
                     <% end %>
                 </div>
