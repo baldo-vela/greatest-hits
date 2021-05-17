@@ -17,6 +17,9 @@ class PlaylistsController < ApplicationController
         # WIP 
         #@playlist.update(views: @playlist.views+1)
     end
+    def player
+        @playlist = Playlist.find(params[:id])
+    end
 
     def new
         #Provides a manual form for now till slightly less jank import action works
@@ -34,7 +37,6 @@ class PlaylistsController < ApplicationController
     def spotify_create
         
         @playlist = Playlist.create_from_spotify_id(params[:spotify_id], current_user.id)
-        byebug
         redirect_to playlist_path(@playlist)
     end
 

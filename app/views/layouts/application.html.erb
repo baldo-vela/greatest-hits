@@ -9,11 +9,12 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag asset_path('gh_favicon.ico') %>
     <meta name="turbolinks-root" content="/app">
+    <%# Renders the nav bar%>
+    <%= render(partial: "layouts/nav") %>
   </head>
 
   <body>
-    <%# Renders the nav bar%>
-    <%= render(partial: "layouts/nav") %>
+    
     <%# displays any flash messages%> 
     <%= flash[:message] %>
     <%# compelted view gets rendered here %> 

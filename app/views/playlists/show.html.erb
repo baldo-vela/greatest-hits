@@ -11,6 +11,7 @@
     <p> Views: <%= @playlist.views %></p>
     <p> Likes: <%= @playlist.likes %></p>
     <p> Dislikes: <%= @playlist.dislikes %></p>
+    <p> <%= link_to "Player", player_playlist_path(@playlist), method: 'get' %> </p>
 </div>
 <%# Like/Dislike buttons Here%>
 <%#= button_to "Like", like_playlist(@playlist), class: 'button' %>

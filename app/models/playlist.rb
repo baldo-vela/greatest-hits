@@ -37,7 +37,7 @@ class Playlist < ApplicationRecord
         playlist = self.new_from_spotify(spotify_playlist, user_id)
         playlist.save
         Track.newTracks_from_playlist(spotify_playlist, playlist.id)
-       
+        return playlist
     end
 
 # Spotify ID based Methods

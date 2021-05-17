@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   #Like and Dislike a Playlist WIP
   post '/playlists/:id/dislike', to: 'playlist#dislike', as: 'dislike_playlist'
   post '/playlists/:id/like', to: 'playlist#like', as: 'like_playlist'
+  get '/playlists/:id/player', to: 'playlists#player', as: 'player_playlist'
+  #renders a player pages for a given playlist
 
   resources :tracks
   resources :playlists, only: [:new, :create, :destroy]

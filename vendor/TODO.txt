@@ -1,0 +1,2 @@
+Switch everything to snake case
+replace urls with link_to

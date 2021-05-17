@@ -27,5 +27,6 @@ class CommentsController < ApplicationController
     private
     def comment_params
         params.require(:comment).permit(:id, :body, :playlist_id, :user_id)
+        #Double check :id in this method
     end
 end
