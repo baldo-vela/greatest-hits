@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.1'
+ruby '3.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.0.0'
@@ -25,6 +25,8 @@ gem 'bcrypt', '~> 3.1.7'
 #Added during Greatest Hits
 #Using Figaro for quick and easy key shimming
 gem 'figaro'
+#Rerun watches the filesystem. If a relevant file changes, then it restarts the program.
+gem 'rerun'
 #RSpotify a Ruby wrapper for the Spotify API https://github.com/guilhermesad/rspotify 
 gem 'rspotify'
 #Spotify OmniAuth
